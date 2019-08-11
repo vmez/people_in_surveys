@@ -4,11 +4,6 @@ author: "Violeta Mezeklieva"
 output: rmarkdown::github_document
 ---
 
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  fig.path = "README_figs/README-"
-)
-```
 
 This all started today when I saw a post on LinkedIn describing today's Data Scientist. The inforgraphic was produced by [CloudFactory](https://www.cloudfactory.com/hubfs/02-Contents/5-Infographics/Life-of-Data-Scientist-Infographic.pdf?hsCtaTracking=4ed5fb6f-cb6d-4b5f-971e-3f69697204c2%7C77b4ec9b-262d-4ae4-bab3-8ac3be56a4f8), complementing with their data on average salaries and job satisfaction to the responses from a survey conducted by Kaggle in 2017. 
 
