@@ -1,0 +1,110 @@
+---
+title: "People in Surveys"
+author: "Violeta Mezeklieva"
+output: rmarkdown::github_document
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  fig.path = "README_figs/README-"
+)
+```
+
+This all started today when I saw a post on LinkedIn describing today's Data Scientist. The inforgraphic was produced by [CloudFactory](https://www.cloudfactory.com/hubfs/02-Contents/5-Infographics/Life-of-Data-Scientist-Infographic.pdf?hsCtaTracking=4ed5fb6f-cb6d-4b5f-971e-3f69697204c2%7C77b4ec9b-262d-4ae4-bab3-8ac3be56a4f8), complementing with their data on average salaries and job satisfaction to the responses from a survey conducted by Kaggle in 2017. 
+
+I went off to find the data and found Kaggle repeated their survey in [October 2018](https://www.kaggle.com/kaggle/kaggle-survey-2018), capturing responses with an increase of 49% participants from last year. So I took on to analyse this one since it has 23,859 participants to be exact. 
+
+```{r, echo=F}
+setwd("C:/Users/vmez/Documents/DS_projects/people_in_surveys")
+```
+
+
+```{r, message=FALSE}
+library("tidyverse")
+```
+
+```{r, message=FALSE}
+multiple <- data.table::fread("multipleChoiceResponses.csv", skip = 1, colClasses = 'character')
+```
+
+```{r}
+cleaned_data <- multiple %>% rename(age = "What is your age (# years)?",
+                            gender = "What is your gender? - Selected Choice",
+                            country = "In which country do you currently reside?",
+                            role = "Select the title most similar to your current role (or most recent title if retired): - Selected Choice",
+                            industry = "In what industry is your current employer/contract (or your most recent employer if retired)? - Selected Choice",
+                            years_experience = "How many years of experience do you have in your current role?",
+                            salary = "What is your current yearly compensation (approximate $USD)?",
+                            ml_at_work = "Does your current employer incorporate machine learning methods into their business?",
+                            coding_time_work = "Approximately what percent of your time at work or school is spent actively coding?",
+                            coding_in_past = "How long have you been writing code to analyze data?",
+                            ml_in_past = "For how many years have you used machine learning methods (at work or in school)?",
+                            self_proclaimed_ds = "Do you consider yourself to be a data scientist?")
+```
+
+I started cleaning the data so the column titles are shorter. Otherwise I will have to use the entire sentence.
+
+And began the analysis by focusing on the age of the respondents. 
+
+(If you checked the data by ths stage you'll notice that not all columns are included in 'cleaned_data'. The missing ones require more data wrangling to see the multiple choices regarding the tools people use at work. That is set aside for later. Stay tunned if you actually wanted to read the update on CloudFactory's infographic. It's not going to be in this post though).
+
+
+```{r}
+cleaned_data %>% 
+  ggplot() + geom_bar(aes(age), fill = 'tomato') + 
+  ggtitle("What is the age of the respondents?") +
+  coord_flip() + theme_minimal()
+```
+
+
+What caught my eye, and this is not procrastination, is the respondents who said their age is 80+. 
+How many are there?
+
+```{r}
+cleaned_data %>% filter(age == "80+") %>% count()
+```
+HA! 39 respondents. 
+I don't doubt there are troopers out there. But just to check, what do they say is their experience in their current role?
+
+```{r}
+cleaned_data %>% filter(age == "80+") %>%
+  group_by(years_experience) %>% count() %>% arrange(desc(n))
+```
+9 say they have 30+ years of experience.
+13 did not respond. 
+
+Alright, but about those career changers at age 79? That's exciting! I guess it's never too late.
+
+What could be their reason? A better salary? 
+
+```{r}
+cleaned_data %>% filter(age == "80+", years_experience == '0-1') %>%
+  group_by(salary, role) %>% count() 
+```
+
+Woow! More than 500k+ for a Chief Officer. Nice.
+
+What about the respondents with 30+ of experience, what do they say is their salary?
+
+```{r}
+cleaned_data %>% filter(age == "80+", years_experience == '30 +') %>%
+  group_by(salary, role) %>% count() 
+```
+
+Well, looks like becoming a Chief Officer is the dream! You can change your career at age 79 and earn the same as someone with 30+ years of experience in that same role.
+
+I feel bad for the Principal Investigators...Being 80+ years old, with 30+ years of experience, and earning 10-20K...But hey, everyone is entitled to live their dream.
+
+
+
+
+
+I dug deeper.
+
+
+```{r}
+cleaned_data %>% filter(age == "80+" & gender == 'Female') %>%
+  select(role, years_experience, country, salary)
+```
+
+C'mon ladies...Let's stop hiding our work. Not even in surveys!
