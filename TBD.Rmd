@@ -27,6 +27,8 @@ I am analysing data from a [survey](https://www.kaggle.com/kaggle/kaggle-survey-
 ## The state of ML and Data Science in LatAm
 
 ```{r}
-
+cleaned_data %>% 
+  ggplot() + geom_bar(aes(country)) +
+  coord_flip() + theme_minimal()
 ```
 
