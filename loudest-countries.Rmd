@@ -21,7 +21,7 @@ This is Part 2 of the series People in Surveys.
 I am analysing data from a [survey](https://www.kaggle.com/kaggle/kaggle-survey-2018#multipleChoiceResponses.csv) conducted by Kaggle in October 2018, gathering data on the state of Machine Learning and Data Science as viewed from their subscribers.
 
 
-## The state of ML and Data Science in LatAm
+## The state of ML and Data Science, a country's opinion
 
 What is the distribution of the participants?
 
