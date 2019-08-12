@@ -1,6 +1,5 @@
 People in Surveys: Loudest Countries
 ================
-Violeta
 
 ``` r
 library("tidyverse")
