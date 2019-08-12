@@ -18,7 +18,7 @@ I am analysing data from a
 conducted by Kaggle in October 2018, gathering data on the state of
 Machine Learning and Data Science as viewed from their subscribers.
 
-## The state of ML and Data Science in LatAm
+## The state of ML and Data Science, a country’s opinion
 
 What is the distribution of the participants?
 
@@ -30,7 +30,7 @@ cleaned_data %>% group_by(country) %>% count() %>%
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))  
 ```
 
-![](loudest-countries_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](loudest-countries_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 The most active participants are people from the USA and
 India
