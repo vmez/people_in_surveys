@@ -9,10 +9,6 @@ This all started today when I saw a post on LinkedIn describing today's Data Sci
 
 I went off to find the data and found Kaggle repeated their survey in [October 2018](https://www.kaggle.com/kaggle/kaggle-survey-2018), capturing responses with an increase of 49% participants from last year. So I took on to analyse this one since it has 23,859 participants to be exact. 
 
-```{r, echo=F}
-setwd("C:/Users/vmez/Documents/DS_projects/people_in_surveys")
-```
-
 
 ```{r, message=FALSE}
 library("tidyverse")
