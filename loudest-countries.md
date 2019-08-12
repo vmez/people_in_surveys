@@ -75,8 +75,9 @@ difference is almost as much as all the participants from India
 combined\!
 
 Their voice is more represented in this survey, and hence, these are the
-people who are influencing the infographics and debates around the state
-of Data Science and Machine Learning.
+people who are influencing the
+[infographics](https://www.cloudfactory.com/hubfs/02-Contents/5-Infographics/Life-of-Data-Scientist-Infographic.pdf?hsCtaTracking=4ed5fb6f-cb6d-4b5f-971e-3f69697204c2%7C77b4ec9b-262d-4ae4-bab3-8ac3be56a4f8)
+and debates around the state of Data Science and Machine Learning.
 
 Should the rest of the world’s data scientist speak up? Do we differ? Do
 we recognise our practices with those of India and the USA?
