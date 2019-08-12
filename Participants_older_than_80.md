@@ -56,7 +56,7 @@ cleaned_data %>%
   coord_flip() + theme_minimal()
 ```
 
-![](Participants_older_than_80_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](Participants_older_than_80_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 What caught my eye, and this is not procrastination, is the respondents
 who said their age is 80+. How many are there?
