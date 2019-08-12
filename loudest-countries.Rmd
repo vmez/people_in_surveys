@@ -3,9 +3,7 @@ title: "People in Surveys: Loudest Countries"
 output: rmarkdown::github_document
 ---
 
-```{r, echo=FALSE}
-setwd("C:/Users/vmez/Documents/DS_projects/people_in_surveys")
-```
+
 ```{r, message=FALSE}
 library("tidyverse")
 ```
