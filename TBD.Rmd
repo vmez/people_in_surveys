@@ -4,9 +4,14 @@ author: "Violeta"
 output: rmarkdown::github_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, echo=FALSE}
+setwd("C:/Users/vmez/Documents/DS_projects/people_in_surveys")
 ```
+
+```{r}
+cleaned_data <- data.table::fread("cleaned_data.csv")
+```
+
 
 ## R Markdown
 
