@@ -82,4 +82,4 @@ and debates around the state of Data Science and Machine Learning.
 Should the rest of the world’s data scientist speak up? Do we differ? Do
 we recognise our practices with those of India and the USA?
 
-Stay tunned for more.
+Stay tuned for more.
